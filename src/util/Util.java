@@ -1,5 +1,5 @@
 /** Clase de funcionalidad variada que proporciona una ayuda al alumno */
-package practica07.util;
+package src.util;
 
 public class Util
 {

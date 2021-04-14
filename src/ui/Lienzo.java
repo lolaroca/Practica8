@@ -1,27 +1,16 @@
 package src.ui;
-
 import src.dominio.Figura;
-
-import javax.swing.*;
 import java.awt.Canvas;
 import java.awt.Graphics;
-
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Collection;
-import java.util.List;
-import java.util.Map.Entry;
+import java.util.HashMap;
 
 
 public class Lienzo extends Canvas
 {
-	private java.util.HashMap figuras = new java.util.HashMap();
-	private List botones = new ArrayList();
+	private HashMap figuras = new HashMap();
 
-	public void addButton(JButton jbuton)
-	{
-		botones.add(jbuton);
-	}
 	public void pintar(String grupo, Figura figura)
 	{
 		Collection figurasGrupo = (Collection) figuras.get(grupo);
@@ -47,7 +36,7 @@ public class Lienzo extends Canvas
 				figura.setVisible(visible);
 			}
 		}
-	}	
+	}
 
 	public void setVisibleTodasFiguras(boolean visible)
 	{

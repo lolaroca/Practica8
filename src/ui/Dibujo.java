@@ -5,58 +5,46 @@ import javax.swing.*;
 
 public class Dibujo extends JFrame
 {
-	 Lienzo lienzo;
 
 	public Dibujo()
 	{
 		super("Dibujo");
-		lienzo = new Lienzo();
-		lienzo.setSize(800,600);
-		this.add(lienzo);
-		this.pack();
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setVisible(true);
 	}
 
-	/** 
-		Pinta el cuadrado recibido por el App y actualiza el lienzo (canvas)
-	 * @param cuadrado cuadrado a pxºintar
+	/**
+	 Pinta el cuadrado recibido por el App y actualiza el lienzo (canvas)
+	 * @param figura para pintar
 	 */
-	public void pintar(String grupo, Figura figura)
+	public void pintar(Lienzo lienzo, String grupo, Figura figura)
 	{
 		lienzo.pintar(grupo, figura);
 		lienzo.repaint();
 	}
-	public void pintar(JButton boton)
-	{
-		lienzo.addButton(boton);
-		lienzo.repaint();
-	}
 
 
-	public void ocultarGrupo(String grupo)
+	public void ocultarGrupo(Lienzo lienzo, String grupo)
 	{
 		lienzo.setVisibleGrupo(grupo, false);
 		lienzo.repaint();
 	}
 
-	public void mostrarGrupo(String grupo)
+	public void mostrarGrupo(Lienzo lienzo, String grupo)
 	{
 		lienzo.setVisibleGrupo(grupo, true);
 		lienzo.repaint();
-	}	
+	}
 
-	public void ocultarTodasFiguras()
+	public void ocultarTodasFiguras(Lienzo lienzo)
 	{
 		lienzo.setVisibleTodasFiguras(false);
 		lienzo.repaint();
 	}
 
-	public void mostrarTodasFiguras()
+	public void mostrarTodasFiguras(Lienzo lienzo)
 	{
 		lienzo.setVisibleTodasFiguras(true);
 		lienzo.repaint();
-	}		
-	
+	}
+
 
 }
